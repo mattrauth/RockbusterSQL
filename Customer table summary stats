@@ -1,0 +1,14 @@
+--summary of customer table--
+SELECT MIN(customer_id) AS min_customer_id,
+       MAX(customer_id) AS max_customer_id,
+       mode() WITHIN GROUP (ORDER BY first_name) AS mode_first_name,
+       mode() WITHIN GROUP (ORDER BY last_name) AS mode_last_name,
+       mode() WITHIN GROUP (ORDER BY email) AS mode_email,
+       MIN(address_id) AS min_address_id,
+       MAX(address_id) AS max_address_id,
+       mode() WITHIN GROUP (ORDER BY activebool) AS mode_active,
+       MIN(create_date) AS min_create_date,
+       Max(create_date) AS max_create_date,
+       MIN(last_update) AS min_last_update,
+       MAX(last_update) AS max_last_update
+FROM customer;
